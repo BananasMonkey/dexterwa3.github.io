@@ -1,77 +1,124 @@
-/*!
- * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
- * Copyright 2021 C.Oliff
- * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
- */
-
-*{
-  background-color: #111 !important;
-  color: #eee;
-  font-family: 'Bad Script', cursive;
-}
-  nav a {
-    color: #ffffff;
-    font-family: 'arial black', arial, sans-serif;
-    padding: 0.5vh;
-    text-decoration: none;
-  
-    background-color: black;
-  }
-
-.bg-black {
-  background-color: #fff !important;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.bg-dark {
-  background-color: #eee !important;
-}
-.nav-home {background-color: black;}
-  
-.nav-my-videos {background-color: black;}
 
-.nav-about-my-channel {background-color: black;}
-
-.nav-my-photoshop {background-color: black;}
-
-.bg-light {
-  color: #eee !important;}
-
-  .btn {
-    color: #eee;
-  }
-
-.bg-white {
-  background-color: #000 !important;
-}
-
-button {
-  background-color:#ffffff;
-  border-color:#23272a;
-  cursor: pointer;
-}
-
-.content{
-  background-color: #23272a !important;
-
-  margin: auto;
-  min-height: 700px;
-  padding: 50px;
-  width: 80%;
-  
-  
-}
-
-h1 {
-color:#ffffff;
-}
-
-h2 {
-    text-align: center;
-}
 body {
-
-    text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
 }
 
-.btn-outline-dark{color:#ffffff;border-color:#343a40}
-.btn-outline-dark:hover{color:#3366cc;border-color:#343a40}
+
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #aa4892, #7066ff);
+  padding: 20px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; 
+  transition: width 0.3s ease;
+}
+
+.sidebar-title {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; 
+}
+
+.button {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+}
+
+
+.collapse-button {
+  position: fixed; 
+  bottom: 20px;    
+  left: 20px;   
+  padding: 10px 15px;
+  font-size: 24px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; 
+  transition: left 0.3s ease;
+}
+.collapse-toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  padding: 10px 15px;
+  font-size: 24px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+
+.main-content.collapsed {
+  margin-left: 0;
+}
+
+#inputa {
+  opacity: 0.4;
+}
